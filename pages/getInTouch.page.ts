@@ -1,8 +1,5 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from '@playwright/test';
 
-const textFieldErrorMessageText = 'Please complete this required field.';
-const dropdownErrorMessageText = 'Please select an option from the dropdown menu.';
-const generalErrorMessageText = 'Please complete all required fields.'
 const iFrameLocator = '#hs-form-iframe-0';
 
 export class GetInTouchPage {
