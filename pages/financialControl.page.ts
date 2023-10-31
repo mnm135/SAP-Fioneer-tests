@@ -6,6 +6,6 @@ export class FinancialControlPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.url = 'https://www.sapfioneer.com/finance-esg/financial-control/';
+        this.url = '/finance-esg/financial-control/';
     }
 }

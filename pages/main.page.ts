@@ -26,6 +26,6 @@ export class SapFioneerMainPage {
     }
 
     async goto() {
-        await this.page.goto('https://www.sapfioneer.com/');
+        await this.page.goto('');
       }
 }
