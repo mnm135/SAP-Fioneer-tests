@@ -10,17 +10,19 @@ export class SapFioneerMainPage {
     readonly companyBookmark: Locator;
     readonly resourcesBookmark: Locator;
     readonly financialControlLink: Locator;
+    readonly getInTouchButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
-        this.bankingBookmark = page.locator('header', { hasText: 'Banking' });
-        this.insuranceBookmark = page.locator('header', { hasText: 'Insurance' });
+        this.bankingBookmark = page.getByRole('listitem').filter({ hasText: 'Banking' });
+        this.insuranceBookmark = page.getByRole('listitem').filter({ hasText: 'Insurance' });
         this.financeAndEsgBookmark = page.getByRole('listitem').filter({ hasText: 'Finance & ESG' });
-        this.servicesBookmark = page.locator('header', { hasText: 'Services' });
-        this.partnersBookamrk = page.locator('header', { hasText: 'Partners' });
-        this.companyBookmark = page.locator('header', { hasText: 'Company' });
-        this.resourcesBookmark = page.locator('header', { hasText: 'Resources' });
+        this.servicesBookmark = page.locator('.nav-top-link').filter({ hasText: 'Services' });
+        this.partnersBookamrk = page.getByRole('listitem').filter({ hasText: 'Partners' });
+        this.companyBookmark = page.getByRole('listitem').filter({ hasText: 'Company' });
+        this.resourcesBookmark = page.getByRole('listitem').filter({ hasText: 'Resource' });
         this.financialControlLink = page.locator('//header//span[text()=" Financial Control "]/..');
+        this.getInTouchButton = page.locator('#masthead').getByRole('link', { name: 'Get in touch' });
     }
 
     async goto() {
